@@ -1,2 +1,24 @@
-# Vue-Iview-Admin
-基于Vue、Vuex、Iview、Axios 开发的通用后台Web管理系统框架
+# ics-admin
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
