@@ -1,17 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+    .pre-loader {
+      background: #fff;
+      background-position: center center;
+      background-size: 13%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 12345;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-transition: display .3s;
+      transition: display .3s;
+    }
+
+    .pre-loader-box {
+      font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #515a6e;
+      background-color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 256px;
+      height: 125px;
+    }
+
+    .pre-loader .loader-logo {
+      padding-bottom: 15px;
+      width: 100%;
+      height: 60px;
+      box-sizing: initial;
+    }
+
+    .pre-loader .loader-progress {
+      height: 8px;
+      border-radius: 15px;
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+      background: #ecf0f4;
+      overflow: hidden
+    }
+
+    .pre-loader .bar {
+      width: 0%;
+      height: 8px;
+      display: block;
+      background: #1b00ff
+    }
+
+    .pre-loader .percent {
+      text-align: center;
+      font-size: 24px;
+      display: none
+    }
+
+    .pre-loader .loading-text {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      padding-top: 15px
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+
+  <div class="pre-loader" id="pre-loader">
+    <div class="pre-loader-box">
+      <div class="loader-logo">
+        <img src="/webapp-logo.png" alt="">
+      </div>
+      <div class="loader-progress" id="progress_div">
+        <div class="bar" id="loading-bar" style="width: 100%;"></div>
+      </div>
+      <div class="percent" id="loading-percent">--</div>
+      <div class="loading-text">Loading... </div>
+    </div>
+  </div>
+  <div id="ICS-Main"></div>
+  <!-- built files will be auto injected -->
+  <script>
+
+    var width = 100,
+      perfData = window.performance.timing, // The PerformanceTiming interface represents timing-related performance information for the given page.
+      EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+      time = parseInt((EstimatedTime / 1000) % 60) * 100;
+    console.log(window.performance.timing)
+    // Percentage Increment Animation
+    var PercentageID = document.querySelector("#loading-percent"),
+      start = 0,
+      durataion = time;
+    animateValue(PercentageID, start, durataion);
+    function animateValue(id, start, duration) {
+      let end = 100, range = end - start,
+        current = start,
+        increment = end > start ? 1 : -1,
+        stepTime = Math.abs(Math.floor(duration / range))
+
+      window['loadTimer'] = setInterval(function () {
+        current += increment;
+        PercentageID.innerText = current
+        let bar = document.querySelector('#loading-bar')
+        bar.style.width = current + "%"
+        //obj.innerHTML = current;
+        if (current === end) {
+          clearInterval(window.loadTimer);
+        }
+      }, stepTime);
+    }
+
+    // // Fading Out Loadbar on Finised
+
+
+    // document.onreadystatechange = loadingChange;//当页面加载状态改变的时候执行这个方法.
+    // function loadingChange() {
+    //   if (document.readyState == "complete") {
+    //     console.log('内容完全加载完毕');
+    //   }
+    // }
+  </script>
+</body>
+
 </html>

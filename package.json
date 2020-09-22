@@ -1,14 +1,24 @@
 {
   "name": "ics-admin",
   "version": "0.1.0",
+  "description": "Vue + Vuex + Axios + iview",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "serve": "cross-env APP_ENV=dev npm run start",
+    "serve:mock": "cross-env APP_ENV=mock npm run start",
+    "serve:prod": "cross-env APP_ENV=prod npm run start",
+    "testing": "cross-env APP_ENV=test npm run start",
+    "deploy": "cross-env APP_ENV=prod npm run build",
+    "deploy:testing": "cross-env APP_ENV=testing npm run build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@i-views/eslint-plugin-iviews": "^1.3.4",
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "view-design": "^4.3.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -19,16 +29,19 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "js-cookie": "^2.2.1",
+    "mockjs": "^1.1.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

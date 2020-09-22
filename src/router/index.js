@@ -1,29 +1,22 @@
 import Vue from 'vue'
+import ViewUI from 'view-design'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import { constantRoutes, errorPageRouter } from './routers'
+import Permission from './permission'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+// 请求重复报错 处理当前已是需切换的 路由。
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  routes: constantRoutes
 })
+
+Permission(router)
 
 export default router

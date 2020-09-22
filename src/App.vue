@@ -1,32 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="ics-webapp">
+    <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  name: 'WebApp'
+}
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.ics-webapp,
+body,
+html {
+  height: 100%;
 }
 
-#nav {
-  padding: 30px;
+body {
+  background-color: #FFF;
+  overflow: hidden;
+  font-size: 14px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+html body ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+html body ::-webkit-scrollbar-thumb {
+    background-color: rgba(144,147,153,.3);
+    border: 3px solid transparent;
+    border-radius: 7px;
+}
+
+html body ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144,147,153,.5)
 }
 </style>
