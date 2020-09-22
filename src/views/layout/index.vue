@@ -1,4 +1,4 @@
-!<template>
+<template>
   <div class="ics-desgin">
     <div class="ics-layout" :class="{'ics-layout-is-collapse': shrink}">
       <div class="mask" @click="changeShrink(false)"></div>

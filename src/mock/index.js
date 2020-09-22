@@ -1,5 +1,5 @@
 import Mock from 'mockjs'
-import { login } from './modules/login'
+import { login, captcha } from './modules/login'
 import { city, cityInfo } from './modules/city'
 import { userInfo, getUserList, batchDelUser, deleteUser, editUser, addUser } from './modules/user'
 import { getMenuList, getAllMenuList, deletePermission, editPermission, addPermission } from './modules/menu'
@@ -8,7 +8,7 @@ import { getAllDictList, getAllDictDataList, deleteDict, deleteDictData, editDic
 Mock.setup({
   timeout: 1000
 })
-
+Mock.mock(RegExp('/api/mock/captcha/init' + '.*'), captcha)
 Mock.mock('/api/mock/login', login)
 Mock.mock('/api/mock/user/info', userInfo)
 Mock.mock('/api/mock/city', city)

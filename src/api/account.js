@@ -14,3 +14,8 @@ export const getUserInfo = (params) => {
 export const getRouters = (params) => {
   return Server.getRequest('/getMenuList', params)
 }
+
+// 验证码
+export const getCaptcha = (params) => {
+  return Server.getRequest('/captcha/init', params)
+}

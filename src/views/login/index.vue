@@ -11,7 +11,7 @@
           </div>
         </div>
         <Row v-if="!socialLogining" class="login-form">
-          <Form ref="LoginForm" :model="loginForm" :rules="rules" class="form" draggable="false">
+          <Form ref="loginForm" :model="loginForm" :rules="rules" class="form" draggable="false">
             <FormItem prop="username">
               <Input v-model="loginForm.username" type="text" :class="{'input-item--active':uname}" prefix="ios-contact"
                      size="large" clearable placeholder="请输入用户名" autocomplete="off" @on-focus="changeColor('uname','focus')"
@@ -89,6 +89,8 @@
 </template>
 
 <script>
+import UUid from 'uuid'
+import { getCaptcha } from '@/api/account'
 export default {
   name: 'Login',
   data() {
@@ -143,11 +145,12 @@ export default {
       this.loadingCaptcha = true
       let uuid = UUid.v1()
       this.captcha = uuid.replace(/-/g, '')
-      initCaptcha(this.captcha).then(res => {
+      getCaptcha(this.captcha).then(res => {
         this.loadingCaptcha = false
         if (res.success) {
-          this.captchaId = res.result
-          this.captchaImg = 'data:image/png;base64,' + this.captchaId
+          let captcha = res.result
+          // this.captchaImg = 'data:image/png;base64,' + captcha
+          this.captchaImg = captcha
         }
       })
     },
@@ -169,15 +172,19 @@ export default {
       }
     },
     submitLogin() {
-      this.socialLogining = true
-      this.$store.dispatch('LoginByUserName', this.loginForm).then(res => {
-        // this.socialLogining = false
-        this.$Message.success('登录成功')
-        // this.$router.push({ path: this.redirect || '/unit/list' })
-        this.$router.push({ path: '/' })
-      }).catch(() => {
-        this.socialLogining = false
-        this.refreshCaptcha()
+      this.$refs.loginForm.validate(valid => {
+        if (valid) {
+          this.socialLogining = true
+          this.$store.dispatch('LoginByUserName', this.loginForm).then(res => {
+            // this.socialLogining = false
+            this.$Message.success('登录成功')
+            // this.$router.push({ path: this.redirect || '/unit/list' })
+            this.$router.push({ path: '/' })
+          }).catch(() => {
+            this.socialLogining = false
+            this.refreshCaptcha()
+          })
+        }
       })
     }
   }
