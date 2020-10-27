@@ -14,9 +14,9 @@
       </div>
     </div>
     <div class="header-right-options">
+      <message-tip v-model="mesCount" />
       <full-screen v-model="isFullScreen" @on-change="fullscreenChange" />
       <lock-screen />
-      <message-tip v-model="mesCount" />
       <account :user-info="accountInfo" />
     </div>
   </div>

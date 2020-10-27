@@ -134,11 +134,7 @@ export const handleBreadcrumb = (vm, root, router, type) => {
       }, router)
     }
   } else {
-    currentPathArr.push({
-      title: '首页',
-      path: '',
-      name: homeRoute.name
-    }, root, router)
+    currentPathArr.push(root, router)
   }
   return currentPathArr
 }

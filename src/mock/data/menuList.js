@@ -4,164 +4,162 @@ export default {
     'message': 'success',
     'code': 200,
     'timestamp': 1599010065038,
-    'result': [
-      {
-        'id': '125909152017944576',
-        'parentId': '',
-        'name': 'ICS-Admin',
-        'showAlways': true,
-        'level': 0,
-        'type': -1,
-        'title': 'ICS-Admin',
-        'path': '',
-        'component': '',
-        'url': '',
-        'children': [
-          {
-            'id': '264935801085759489',
-            'parentId': '125909152017944576',
-            'name': 'dashboard',
-            'showAlways': false,
-            'level': 1,
-            'type': 0,
-            'title': '总览',
-            'path': '/dashboard',
-            'component': 'Layout',
-            'icon': 'logo-buffer',
-            'url': '',
-            'children': [
-              {
-                'id': '264936312123953152',
-                'parentId': '264935801085759489',
-                'name': 'dashboard-index',
-                'showAlways': true,
-                'level': 2,
-                'type': 0,
-                'title': '总览',
-                'path': 'index',
-                'component': 'dashboard/workplace',
-                'icon': 'logo-buffer',
-                'url': '',
-                'children': [],
-                'permTypes': [],
-                'isCustomIcon': 1
-              }
-            ],
-            'permTypes': null,
-            'isCustomIcon': 0
-          },
-          {
-            'id': '5129710648430592',
-            'parentId': '125909152017944576',
-            'name': 'sys',
-            'showAlways': true,
-            'level': 1,
-            'type': 0,
-            'title': '系统管理',
-            'path': '/sys',
-            'component': 'Layout',
-            'icon': 'ios-settings',
-            'url': '',
-            'children': [
-              {
-                'id': '5129710648430593',
-                'parentId': '5129710648430592',
-                'name': 'user-manage',
-                'showAlways': true,
-                'level': 2,
-                'type': 0,
-                'title': '用户管理',
-                'path': 'user-manage',
-                'component': 'system/userManage/user',
-                'icon': 'md-person',
-                'url': '',
-                'children': null,
-                'permTypes': [
-                  'add',
-                  'edit',
-                  'disable',
-                  'enable',
-                  'delete',
-                  'upload',
-                  'input',
-                  'other'
-                ],
-                'isCustomIcon': 1
-              },
-              {
-                'id': '5129710648430594',
-                'parentId': '5129710648430592',
-                'name': 'role-manage',
-                'showAlways': true,
-                'level': 2,
-                'type': 0,
-                'title': '角色权限管理',
-                'path': 'role-manage',
-                'component': 'system/roleManage/role',
-                'icon': 'md-contacts',
-                'url': '',
-                'children': [],
-                'permTypes': [
-                  'add',
-                  'edit',
-                  'delete',
-                  'editPerm',
-                  'setDefault'
-                ],
-                'isCustomIcon': 1
-              },
-              {
-                'id': '5129710648430595',
-                'parentId': '5129710648430592',
-                'name': 'menu-manage',
-                'showAlways': true,
-                'level': 2,
-                'type': 0,
-                'title': '菜单权限管理',
-                'path': 'menu-manage',
-                'component': 'system/menuManage/menu',
-                'icon': 'md-menu',
-                'url': '',
-                'children': [],
-                'permTypes': [
-                  'add',
-                  'edit',
-                  'delete'
-                ],
-                'isCustomIcon': 1
-              },
-              {
-                'id': '75002207560273920',
-                'parentId': '5129710648430592',
-                'name': 'dict',
-                'showAlways': true,
-                'level': 2,
-                'type': 0,
-                'title': '数据字典管理',
-                'path': 'dict',
-                'component': 'system/dictManage/dict',
-                'icon': 'md-bookmarks',
-                'url': '',
-                'children': [],
-                'permTypes': [
-                  'add',
-                  'edit',
-                  'delete',
-                  'add',
-                  'edit',
-                  'delete'
-                ],
-                'isCustomIcon': 1
-              }
-            ],
-            'permTypes': null,
-            'isCustomIcon': 0
-          }
-        ],
-        'permTypes': null,
-        'isCustomIcon': 1
-      }
-    ]
+    'result': [{
+      'id': '125909152017944576',
+      'parentId': '',
+      'name': 'ICS-Admin',
+      'showAlways': true,
+      'level': 0,
+      'type': -1,
+      'title': 'ICS-Admin',
+      'path': '',
+      'component': '',
+      'url': '',
+      'children': [
+        {
+          'id': '264935801085759489',
+          'parentId': '125909152017944576',
+          'name': 'dashboard',
+          'showAlways': false,
+          'level': 1,
+          'type': 0,
+          'title': '总览',
+          'path': '/dashboard',
+          'component': 'Layout',
+          'icon': 'logo-buffer',
+          'url': '',
+          'children': [
+            {
+              'id': '264936312123953152',
+              'parentId': '264935801085759489',
+              'name': 'dashboard-index',
+              'showAlways': true,
+              'level': 2,
+              'type': 0,
+              'title': '总览',
+              'path': 'index',
+              'component': 'dashboard/workplace',
+              'icon': 'logo-buffer',
+              'url': '',
+              'children': [],
+              'permTypes': [],
+              'isCustomIcon': 1
+            }
+          ],
+          'permTypes': null,
+          'isCustomIcon': 0
+        },
+        {
+          'id': '5129710648430592',
+          'parentId': '125909152017944576',
+          'name': 'sys',
+          'showAlways': true,
+          'level': 1,
+          'type': 0,
+          'title': '系统管理',
+          'path': '/sys',
+          'component': 'Layout',
+          'icon': 'ios-settings',
+          'url': '',
+          'children': [
+            {
+              'id': '5129710648430593',
+              'parentId': '5129710648430592',
+              'name': 'user-manage',
+              'showAlways': true,
+              'level': 2,
+              'type': 0,
+              'title': '用户管理',
+              'path': 'user-manage',
+              'component': 'system/userManage/user',
+              'icon': 'md-person',
+              'url': '',
+              'children': null,
+              'permTypes': [
+                'add',
+                'edit',
+                'disable',
+                'enable',
+                'delete',
+                'upload',
+                'input',
+                'other'
+              ],
+              'isCustomIcon': 1
+            },
+            {
+              'id': '5129710648430594',
+              'parentId': '5129710648430592',
+              'name': 'role-manage',
+              'showAlways': true,
+              'level': 2,
+              'type': 0,
+              'title': '角色权限管理',
+              'path': 'role-manage',
+              'component': 'system/roleManage/role',
+              'icon': 'md-contacts',
+              'url': '',
+              'children': [],
+              'permTypes': [
+                'add',
+                'edit',
+                'delete',
+                'editPerm',
+                'setDefault'
+              ],
+              'isCustomIcon': 1
+            },
+            {
+              'id': '5129710648430595',
+              'parentId': '5129710648430592',
+              'name': 'menu-manage',
+              'showAlways': true,
+              'level': 2,
+              'type': 0,
+              'title': '菜单权限管理',
+              'path': 'menu-manage',
+              'component': 'system/menuManage/menu',
+              'icon': 'md-menu',
+              'url': '',
+              'children': [],
+              'permTypes': [
+                'add',
+                'edit',
+                'delete'
+              ],
+              'isCustomIcon': 1
+            },
+            {
+              'id': '75002207560273920',
+              'parentId': '5129710648430592',
+              'name': 'dict',
+              'showAlways': true,
+              'level': 2,
+              'type': 0,
+              'title': '数据字典管理',
+              'path': 'dict',
+              'component': 'system/dictManage/dict',
+              'icon': 'md-bookmarks',
+              'url': '',
+              'children': [],
+              'permTypes': [
+                'add',
+                'edit',
+                'delete',
+                'add',
+                'edit',
+                'delete'
+              ],
+              'isCustomIcon': 1
+            }
+          ],
+          'permTypes': null,
+          'isCustomIcon': 0
+        }
+      ],
+      'permTypes': null,
+      'isCustomIcon': 1
+    }]
   },
   all: {
     'success': true,

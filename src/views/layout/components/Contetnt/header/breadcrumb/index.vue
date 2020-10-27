@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb class="breadcrumb-list">
-    <BreadcrumbItem v-for="item in currentPath" :key="'breadcrumb-' + item.name" :to="item.path">{{ item.title }}</BreadcrumbItem>
+    <BreadcrumbItem v-for="item in currentPath" :key="'breadcrumb-' + item.name">{{ item.title }}</BreadcrumbItem>
   </Breadcrumb>
 </template>
 

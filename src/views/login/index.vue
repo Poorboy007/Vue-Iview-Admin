@@ -129,6 +129,9 @@ export default {
       }
     }
   },
+  mounted() {
+    this.getCaptchaImg()
+  },
   methods: {
     changeColor(inp, event) {
       if (inp === 'uname') {

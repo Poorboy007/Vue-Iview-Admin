@@ -27,7 +27,7 @@ export default (router) => {
               const appRouter = {
                 path: '/',
                 name: 'appRouter',
-                redirect: '/notice',
+                redirect: '/workplace',
                 component: () => import('@/views/layout/'),
                 children: [
                   { path: '/workplace', title: '工作台', name: 'workplace', component: () => import('@/views/dashboard/workplace.vue') },
@@ -60,11 +60,10 @@ export default (router) => {
                   tagsList.push(item)
                 }
               })
-              store.commit('SET_TAGS_LIST', tagsList)
+              store.commit('SET_TAGS_LIST', tagsList) //
               store.commit('SET_ROUTERS', [appRouter])
-              router.addRoutes([appRouter])
-              router.addRoutes(accessRouters) // 动态添加可访问路由表
-
+              // router.addRoutes([appRouter])
+              // router.addRoutes(accessRouters) // 动态添加可访问路由表
               Utils.handleIndexLoader().then(() => {
                 next({ ...to, replace: true }) // hack方法 确保addRouters已完成
               })

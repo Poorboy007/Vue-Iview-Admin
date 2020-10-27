@@ -22,7 +22,7 @@ export default {
       'username': 'admin',
       'realname': '管理员',
       'password': null,
-      'nickName': 'Exrick',
+      'nickName': 'LiuFch',
       'mobile': '18782059038',
       'email': '2549575805@qq.com',
       'address': '[\'510000\',\'510100\',\'510104\']',

@@ -10,19 +10,22 @@ Mock.setup({
 })
 Mock.mock(RegExp('/api/mock/captcha/init' + '.*'), captcha)
 Mock.mock('/api/mock/login', login)
-Mock.mock('/api/mock/user/info', userInfo)
 Mock.mock('/api/mock/city', city)
 Mock.mock('/api/mock/cityInfo', cityInfo)
 Mock.mock('/api/mock/getMenuList', getMenuList)
+
 Mock.mock('/api/mock/menu/getAllMenuList', getAllMenuList)
 Mock.mock('/api/mock/menu/deletePermission', deletePermission)
 Mock.mock('/api/mock/menu/editPermission', editPermission)
 Mock.mock('/api/mock/menu/addPermission', addPermission)
+
+Mock.mock('/api/mock/user/info', userInfo)
 Mock.mock('/api/mock/user/getUserList', getUserList)
 Mock.mock('/api/mock/user/editUser', editUser)
 Mock.mock('/api/mock/user/addUser', addUser)
 Mock.mock('/api/mock/user/batchDelUser', batchDelUser)
 Mock.mock('/api/mock/user/deleteUser', deleteUser)
+
 Mock.mock('/api/mock/role/getRoleList', getRoleList)
 Mock.mock('/api/mock/role/batchDelRole', batchDelRole)
 Mock.mock('/api/mock/role/deleteRole', deleteRole)
